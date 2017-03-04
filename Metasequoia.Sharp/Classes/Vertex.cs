@@ -14,26 +14,26 @@ namespace Metasequoia
 		public Object Object { get; }
 
 		/// <summary>
-		/// 頂点のユニーク ID を取得します。
-		/// UINT MQObject::GetVertexUniqueID(int index);
+		/// <para>頂点のユニーク ID を取得します。</para>
+		/// <para>UINT MQObject::GetVertexUniqueID(int index);</para>
 		/// </summary>
 		public uint UniqueId { get; }
 
 		/// <summary>
-		/// 頂点のインデックスを取得します。
-		/// int MQObject::GetVertexIndexFromUniqueID(UINT unique_id);
+		/// <para>頂点のインデックスを取得します。</para>
+		/// <para>int MQObject::GetVertexIndexFromUniqueID(UINT unique_id);</para>
 		/// </summary>
 		public int Index => NativeMethods.MQObj_GetVertexIndexFromUniqueID(Object.Handle, UniqueId);
 
 		/// <summary>
-		/// 頂点の面からの参照数を取得します。
-		/// int MQObject::GetVertexRefCount(int index);
+		/// <para>頂点の面からの参照数を取得します。</para>
+		/// <para>int MQObject::GetVertexRefCount(int index);</para>
 		/// </summary>
 		public int RefCount => NativeMethods.MQObj_GetVertexRefCount(Object.Handle, Index);
 
 		/// <summary>
-		/// 頂点の位置を取得または設定します。
-		/// MQPoint MQObject::GetVertex(int index);
+		/// <para>頂点の位置を取得または設定します。</para>
+		/// <para>MQPoint MQObject::GetVertex(int index);</para>
 		/// </summary>
 		public Point Position
 		{
@@ -47,8 +47,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 曲面に対する重みを取得または設定します。
-		/// float MQObject::GetVertexWeight(int index);
+		/// <para>曲面に対する重みを取得または設定します。</para>
+		/// <para>float MQObject::GetVertexWeight(int index);</para>
 		/// </summary>
 		public float Weight
 		{
@@ -57,8 +57,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 頂点の選択状態を取得または設定します。
-		/// BOOL MQDocument::IsSelectVertex(int objindex, int vertindex);
+		/// <para>頂点の選択状態を取得または設定します。</para>
+		/// <para>BOOL MQDocument::IsSelectVertex(int objindex, int vertindex);</para>
 		/// </summary>
 		public bool IsSelected
 		{
@@ -82,8 +82,8 @@ namespace Metasequoia
 			new Vertex(obj, NativeMethods.MQObj_GetVertexUniqueID(obj.Handle, index));
 
 		/// <summary>
-		/// 現在の頂点を使用している面を取得します。
-		/// UINT MQObject::GetVertexRelatedFaces(int vertex, int *faces);
+		/// <para>現在の頂点を使用している面を取得します。</para>
+		/// <para>UINT MQObject::GetVertexRelatedFaces(int vertex, int *faces);</para>
 		/// </summary>
 		/// <returns>現在の頂点を使用している面。</returns>
 		public IEnumerable<Face> GetVertexRelatedFaces()
@@ -98,16 +98,16 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 指定された頂点から位置以外の属性を現在の頂点にコピーします。
-		/// void MQObject::CopyVertexAttribute(int vert1, MQObject obj2, int vert2);
+		/// <para>指定された頂点から位置以外の属性を現在の頂点にコピーします。</para>
+		/// <para>void MQObject::CopyVertexAttribute(int vert1, MQObject obj2, int vert2);</para>
 		/// </summary>
 		/// <param name="vertex">属性のコピー元となる頂点。</param>
 		public void CopyAttributesFrom(Vertex vertex) =>
 			NativeMethods.MQObj_CopyVertexAttribute(Object.Handle, Index, vertex.Object.Handle, vertex.Index);
 
 		/// <summary>
-		/// 現在の頂点を削除します。
-		/// BOOL MQObject::DeleteVertex(int index);
+		/// <para>現在の頂点を削除します。</para>
+		/// <para>BOOL MQObject::DeleteVertex(int index);</para>
 		/// </summary>
 		public void Remove() =>
 			NativeMethods.MQObj_DeleteVertex(Object.Handle, Index, true);

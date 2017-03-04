@@ -20,8 +20,8 @@ namespace Metasequoia
 		public Document Document { get; set; }
 
 		/// <summary>
-		/// オブジェクトのユニーク ID を取得します。
-		/// UINT MQObject::GetUniqueID();
+		/// <para>オブジェクトのユニーク ID を取得します。</para>
+		/// <para>UINT MQObject::GetUniqueID();</para>
 		/// </summary>
 		/// <remarks>
 		/// ユニーク ID はドキュメントに登録された時点で割り当てられます。
@@ -34,8 +34,8 @@ namespace Metasequoia
 		public int Index => NativeMethods.MQDoc_GetObjectIndex(Document.Handle, Handle);
 
 		/// <summary>
-		/// 親オブジェクトを取得します。
-		/// MQObject MQDocument::GetParentObject(MQObject obj);
+		/// <para>親オブジェクトを取得します。</para>
+		/// <para>MQObject MQDocument::GetParentObject(MQObject obj);</para>
 		/// </summary>
 		public Object Parent
 		{
@@ -53,16 +53,16 @@ namespace Metasequoia
 		public ObjectFaceCollection Faces { get; }
 
 		/// <summary>
-		/// 子オブジェクトを取得します。
-		/// MQObject MQDocument::GetChildObject(MQObject obj, int index);
+		/// <para>子オブジェクトを取得します。</para>
+		/// <para>MQObject MQDocument::GetChildObject(MQObject obj, int index);</para>
 		/// </summary>
 		public ReadOnlyIndexer<Object> Children { get; }
 
 		#region Properties
 
 		/// <summary>
-		/// オブジェクトの種類を取得または設定します。
-		/// int MQObject::GetType();
+		/// <para>オブジェクトの種類を取得または設定します。</para>
+		/// <para>int MQObject::GetType();</para>
 		/// </summary>
 		public MQObjectType Type
 		{
@@ -71,8 +71,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// オブジェクトの名前を取得または設定します。
-		/// void MQObject::GetName(char *buffer, int size);
+		/// <para>オブジェクトの名前を取得または設定します。</para>
+		/// <para>void MQObject::GetName(char *buffer, int size);</para>
 		/// </summary>
 		public string Name
 		{
@@ -88,8 +88,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// オブジェクトの選択状態を取得または設定します。
-		/// BOOL MQObject::GetSelected();
+		/// <para>オブジェクトの選択状態を取得または設定します。</para>
+		/// <para>BOOL MQObject::GetSelected();</para>
 		/// </summary>
 		public bool IsSelected
 		{
@@ -98,8 +98,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// オブジェクトの可視状態を取得または設定します。
-		/// DWORD MQObject::GetVisible();
+		/// <para>オブジェクトの可視状態を取得または設定します。</para>
+		/// <para>DWORD MQObject::GetVisible();</para>
 		/// </summary>
 		public bool IsVisible
 		{
@@ -108,8 +108,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// スムージングの種類を取得または設定します。
-		/// int MQObject::GetShading();
+		/// <para>スムージングの種類を取得または設定します。</para>
+		/// <para>int MQObject::GetShading();</para>
 		/// </summary>
 		public MQObjectShade Shading
 		{
@@ -118,8 +118,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// スムージング角度を取得または設定します。
-		/// float MQObject::GetSmoothAngle();
+		/// <para>スムージング角度を取得または設定します。</para>
+		/// <para>float MQObject::GetSmoothAngle();</para>
 		/// </summary>
 		public float SmoothAngle
 		{
@@ -128,8 +128,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 鏡面の種類を取得または設定します。
-		/// int MQObject::GetMirrorType();
+		/// <para>鏡面の種類を取得または設定します。</para>
+		/// <para>int MQObject::GetMirrorType();</para>
 		/// </summary>
 		public MQObjectMirror MirrorType
 		{
@@ -138,8 +138,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 鏡面の軸を取得または設定します。
-		/// DWORD MQObject::GetMirrorAxis();
+		/// <para>鏡面の軸を取得または設定します。</para>
+		/// <para>DWORD MQObject::GetMirrorAxis();</para>
 		/// </summary>
 		public MQObjectMirrorAxis MirrorAxis
 		{
@@ -148,8 +148,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 鏡面の接続距離を取得または設定します。
-		/// float MQObgject::GetMirrorDistance();
+		/// <para>鏡面の接続距離を取得または設定します。</para>
+		/// <para>float MQObgject::GetMirrorDistance();</para>
 		/// </summary>
 		public float MirrorDistance
 		{
@@ -158,8 +158,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// オブジェクトの階層の深さを取得または設定します。
-		/// int MQObject::GetDepth();
+		/// <para>オブジェクトの階層の深さを取得または設定します。</para>
+		/// <para>int MQObject::GetDepth();</para>
 		/// </summary>
 		public int Depth
 		{
@@ -168,8 +168,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// オブジェクトパネル上で子オブジェクトを折りたたんでいるかどうかを取得または設定します。
-		/// BOOL MQObject::GetFolding();
+		/// <para>オブジェクトパネル上で子オブジェクトを折りたたんでいるかどうかを取得または設定します。</para>
+		/// <para>BOOL MQObject::GetFolding();</para>
 		/// </summary>
 		public bool IsCollapsed
 		{
@@ -178,8 +178,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// オブジェクトが編集禁止であるかどうかを取得または設定します。
-		/// BOOL MQObject::GetLocking();
+		/// <para>オブジェクトが編集禁止であるかどうかを取得または設定します。</para>
+		/// <para>BOOL MQObject::GetLocking();</para>
 		/// </summary>
 		public bool IsLocked
 		{
@@ -188,8 +188,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 頂点および辺の表示色を取得または設定します。
-		/// MQColor MQObject::GetColor();
+		/// <para>頂点および辺の表示色を取得または設定します。</para>
+		/// <para>MQColor MQObject::GetColor();</para>
 		/// </summary>
 		public Color Color
 		{
@@ -205,8 +205,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 頂点および辺に表示色を適用するかどうかを取得または設定します。
-		/// BOOL MQObject::GetColorValid();
+		/// <para>頂点および辺に表示色を適用するかどうかを取得または設定します。</para>
+		/// <para>BOOL MQObject::GetColorValid();</para>
 		/// </summary>
 		public bool UseColor
 		{
@@ -218,8 +218,8 @@ namespace Metasequoia
 		#region Patch
 
 		/// <summary>
-		/// 曲面の種類を取得または設定します。
-		/// DWORD MQObject::GetPatchType();
+		/// <para>曲面の種類を取得または設定します。</para>
+		/// <para>DWORD MQObject::GetPatchType();</para>
 		/// </summary>
 		public MQObjectPatch PatchType
 		{
@@ -228,8 +228,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 曲面の分割数を取得または設定します。
-		/// int MQObject::GetPatchSegment();
+		/// <para>曲面の分割数を取得または設定します。</para>
+		/// <para>int MQObject::GetPatchSegment();</para>
 		/// </summary>
 		public int PatchSegment
 		{
@@ -238,8 +238,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// Catmull-Clark 曲面において三角形を三角形に分割するかどうかを取得または設定します。
-		/// BOOL MQObject::GetPatchTriangle();
+		/// <para>Catmull-Clark 曲面において三角形を三角形に分割するかどうかを取得または設定します。</para>
+		/// <para>BOOL MQObject::GetPatchTriangle();</para>
 		/// </summary>
 		public bool PatchTriangle
 		{
@@ -248,8 +248,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// OpenSubdiv 曲面において三角形のスムージングを行うかどうかを取得または設定します。
-		/// BOOL MQObject::GetPatchSmoothTriangle();
+		/// <para>OpenSubdiv 曲面において三角形のスムージングを行うかどうかを取得または設定します。</para>
+		/// <para>BOOL MQObject::GetPatchSmoothTriangle();</para>
 		/// </summary>
 		public bool PatchSmoothTriangle
 		{
@@ -258,8 +258,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// OpenSubdiv 曲面において極限サーフェイスの適用を行うかどうかを取得または設定します。
-		/// BOOL MQObject::GetPatchLimitSurface();
+		/// <para>OpenSubdiv 曲面において極限サーフェイスの適用を行うかどうかを取得または設定します。</para>
+		/// <para>BOOL MQObject::GetPatchLimitSurface();</para>
 		/// </summary>
 		public bool PatchLimitSurface
 		{
@@ -268,8 +268,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// OpenSubdiv 曲面において開いた面の境界の補間方法を取得または設定します。
-		/// int MQObject::GetPatchMeshInterp();
+		/// <para>OpenSubdiv 曲面において開いた面の境界の補間方法を取得または設定します。</para>
+		/// <para>int MQObject::GetPatchMeshInterp();</para>
 		/// </summary>
 		public MQObjectInterp PatchMeshInterpolation
 		{
@@ -278,8 +278,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// OpenSubdiv 曲面において開いた UV の境界の補間方法を取得または設定します。
-		/// int MQObject::GetPatchUVInterp();
+		/// <para>OpenSubdiv 曲面において開いた UV の境界の補間方法を取得または設定します。</para>
+		/// <para>int MQObject::GetPatchUVInterp();</para>
 		/// </summary>
 		public MQObjectUvinterp PatchUVInterpolation
 		{
@@ -291,8 +291,8 @@ namespace Metasequoia
 		#region Lathe
 
 		/// <summary>
-		/// 回転体の種類を取得または設定します。
-		/// int MQObject::GetLatheType();
+		/// <para>回転体の種類を取得または設定します。</para>
+		/// <para>int MQObject::GetLatheType();</para>
 		/// </summary>
 		public MQObjectLathe LatheType
 		{
@@ -301,8 +301,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 回転体の軸を取得または設定します。
-		/// DWORD MQobject::GetLatheAxis();
+		/// <para>回転体の軸を取得または設定します。</para>
+		/// <para>DWORD MQobject::GetLatheAxis();</para>
 		/// </summary>
 		public MQObjectLatheAxis LatheAxis
 		{
@@ -311,8 +311,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 回転体の分割数を取得または設定します。
-		/// int MQObject::GetLatheSegment();
+		/// <para>回転体の分割数を取得または設定します。</para>
+		/// <para>int MQObject::GetLatheSegment();</para>
 		/// </summary>
 		public int LatheSegment
 		{
@@ -324,8 +324,8 @@ namespace Metasequoia
 		#region Local Transform
 
 		/// <summary>
-		/// ローカル座標の拡大を取得または設定します。
-		/// MQPoint MQObject::GetScaling();
+		/// <para>ローカル座標の拡大を取得または設定します。</para>
+		/// <para>MQPoint MQObject::GetScaling();</para>
 		/// </summary>
 		public Point Scaling
 		{
@@ -358,8 +358,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// ローカル座標の平行移動を取得または設定します。
-		/// MQPoint MQObject::GetTranslation();
+		/// <para>ローカル座標の平行移動を取得または設定します。</para>
+		/// <para>MQPoint MQObject::GetTranslation();</para>
 		/// </summary>
 		public Point Translation
 		{
@@ -375,8 +375,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// ローカル座標の変換行列を取得または設定します。
-		/// void MQObject::GetLocalMatrix(MQMatrix&amp; mtx);
+		/// <para>ローカル座標の変換行列を取得または設定します。</para>
+		/// <para>void MQObject::GetLocalMatrix(MQMatrix&amp; mtx);</para>
 		/// </summary>
 		public Matrix LocalMatrix
 		{
@@ -392,8 +392,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// ローカル座標の変換行列が適用された、グローバル座標の変換行列を取得します。
-		/// void MQDocument::GetGlobalMatrix(MQObject obj, MQMatrix&amp; mtx);
+		/// <para>ローカル座標の変換行列が適用された、グローバル座標の変換行列を取得します。</para>
+		/// <para>void MQDocument::GetGlobalMatrix(MQObject obj, MQMatrix&amp; mtx);</para>
 		/// </summary>
 		public Matrix GlobalMatrix
 		{
@@ -409,8 +409,8 @@ namespace Metasequoia
 		#region Light
 
 		/// <summary>
-		/// 光源オブジェクトの強度を取得または設定します。
-		/// float MQObject::GetLightValue();
+		/// <para>光源オブジェクトの強度を取得または設定します。</para>
+		/// <para>float MQObject::GetLightValue();</para>
 		/// </summary>
 		public float LightValue
 		{
@@ -426,8 +426,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 光源オブジェクトの光減衰度を取得または設定します。
-		/// int MQObject::GetLightAttenuation();
+		/// <para>光源オブジェクトの光減衰度を取得または設定します。</para>
+		/// <para>int MQObject::GetLightAttenuation();</para>
 		/// </summary>
 		public MQObjectLightAttenuation LightAttenuation
 		{
@@ -436,8 +436,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 光源オブジェクトの減衰終了距離を取得または設定します。
-		/// float MQObject::GetLightFallOffEnd();
+		/// <para>光源オブジェクトの減衰終了距離を取得または設定します。</para>
+		/// <para>float MQObject::GetLightFallOffEnd();</para>
 		/// </summary>
 		public float LightFalloffEnd
 		{
@@ -453,8 +453,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 光源オブジェクトの減衰半減距離を取得または設定します。
-		/// float MQObject::GetLightFallOffHalf();
+		/// <para>光源オブジェクトの減衰半減距離を取得または設定します。</para>
+		/// <para>float MQObject::GetLightFallOffHalf();</para>
 		/// </summary>
 		public float LightFalloffHalf
 		{
@@ -491,12 +491,15 @@ namespace Metasequoia
 		public static Object FromUniqueId(Document doc, uint uniqueId) => new Object(doc, NativeMethods.MQDoc_GetObjectFromUniqueID(doc.Handle, (int)uniqueId));
 
 		/// <summary>
-		/// OnDraw 時に描画するオブジェクトを作成します。
-		/// MQObject MQStationPlugin::CreateDrawingObject(MQDocument doc, DRAW_OBJECT_VISIBILITY visibility, BOOL instant);
+		/// <para>OnDraw 時に描画するオブジェクトを作成します。</para>
+		/// <para>MQObject MQStationPlugin::CreateDrawingObject(MQDocument doc, DRAW_OBJECT_VISIBILITY visibility, BOOL instant);</para>
 		/// </summary>
 		/// <param name="doc">親となるドキュメント。</param>
 		/// <param name="visibility">表示する要素。</param>
-		/// <param name="isInstant">描画完了時に自動的に破棄するかどうか。false を指定した場合、不要になった時点で <see cref="Dispose"/> を呼び出してください。</param>
+		/// <param name="isInstant">
+		/// <para>描画完了時に自動的に破棄するかどうか。</para>
+		/// <para>false を指定した場合、不要になった時点で <see cref="Dispose"/> を呼び出してください。</para>
+		/// </param>
 		/// <returns>描画用オブジェクト。</returns>
 		public static Object CreateDrawingObject(Document doc, DrawingObjectVisibility visibility, bool isInstant = true)
 		{
@@ -521,13 +524,16 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 基になるオブジェクトを指定し、OnDraw 時に描画するオブジェクトを作成します。
-		/// MQObject MQStationPlugin::CreateDrawingObject(MQDocument doc, DRAW_OBJECT_VISIBILITY visibility, BOOL instant);
+		/// <para>基になるオブジェクトを指定し、OnDraw 時に描画するオブジェクトを作成します。</para>
+		/// <para>MQObject MQStationPlugin::CreateDrawingObject(MQDocument doc, DRAW_OBJECT_VISIBILITY visibility, BOOL instant);</para>
 		/// </summary>
 		/// <param name="doc">親となるドキュメント。</param>
 		/// <param name="source">基になるオブジェクト。</param>
 		/// <param name="visibility">表示する要素。</param>
-		/// <param name="isInstant">描画完了時に自動的に破棄するかどうか。false を指定した場合、不要になった時点で <see cref="Dispose"/> を呼び出してください。</param>
+		/// <param name="isInstant">
+		/// <para>描画完了時に自動的に破棄するかどうか。</para>
+		/// <para>false を指定した場合、不要になった時点で <see cref="Dispose"/> を呼び出してください。</para>
+		/// </param>
 		/// <returns>描画用オブジェクト。</returns>
 		public static Object CreateDrawingObject(Document doc, Object source, DrawingObjectVisibility visibility, bool isInstant = true)
 		{
@@ -553,13 +559,13 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 描画時にこのオブジェクトを代替して描画するオブジェクトを指定します。
-		/// void MQStationPlugin::SetDrawProxyObject(MQObject obj, MQObject proxy);
+		/// <para>描画時にこのオブジェクトを代替して描画するオブジェクトを指定します。</para>
+		/// <para>void MQStationPlugin::SetDrawProxyObject(MQObject obj, MQObject proxy);</para>
 		/// </summary>
 		/// <param name="proxy">代替として描画するオブジェクト、または代替描画を解除する場合は null。</param>
 		/// <remarks>
-		/// このメソッドによって代替されるのは描画のみであり、操作には影響しません。
-		/// 代替描画は代替として指定されたオブジェクトが破棄されるか、<paramref name="proxy"/> に null が指定されるまで継続します。
+		/// <para>このメソッドによって代替されるのは描画のみであり、操作には影響しません。</para>
+		/// <para>代替描画は代替として指定されたオブジェクトが破棄されるか、<paramref name="proxy"/> に null が指定されるまで継続します。</para>
 		/// </remarks>
 		public void SetDrawProxyObject(Object proxy)
 		{
@@ -572,32 +578,32 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 指定された項目を強制的に表示にします。
-		/// void MQObject::AddRenderFlag(MQOBJECT_RENDER_FLAG flag);
+		/// <para>指定された項目を強制的に表示にします。</para>
+		/// <para>void MQObject::AddRenderFlag(MQOBJECT_RENDER_FLAG flag);</para>
 		/// </summary>
 		/// <param name="flags">強制的に表示にする表示項目。</param>
 		public void ForceShow(MQObjectRenderFlag flags) =>
 			ModifyRenderFlag(MQObjId.AddRenderFlag, flags);
 
 		/// <summary>
-		/// 指定された項目の表示の強制を解除します。
-		/// void MQObject::RemoveRenderFlag(MQOBJECT_RENDER_FLAG flag);
+		/// <para>指定された項目の表示の強制を解除します。</para>
+		/// <para>void MQObject::RemoveRenderFlag(MQOBJECT_RENDER_FLAG flag);</para>
 		/// </summary>
 		/// <param name="flags">表示の強制を解除する表示項目。</param>
 		public void UnforceShow(MQObjectRenderFlag flags) =>
 			ModifyRenderFlag(MQObjId.RemoveRenderFlag, flags);
 
 		/// <summary>
-		/// 指定された項目を強制的に非表示にします。
-		/// void MQObject::AddRenderEraseFlag(MQOBJECT_RENDER_FLAG flag);
+		/// <para>指定された項目を強制的に非表示にします。</para>
+		/// <para>void MQObject::AddRenderEraseFlag(MQOBJECT_RENDER_FLAG flag);</para>
 		/// </summary>
 		/// <param name="flags">強制的に非表示にする表示盲目。</param>
 		public void ForceHide(MQObjectRenderFlag flags) =>
 			ModifyRenderFlag(MQObjId.AddEraseFlag, flags);
 
 		/// <summary>
-		/// 指定された項目の非表示の強制を解除します。
-		/// void MQObject::RemoveRenderEraseFlag(MQOBJECT_RENDER_FLAG flag);
+		/// <para>指定された項目の非表示の強制を解除します。</para>
+		/// <para>void MQObject::RemoveRenderEraseFlag(MQOBJECT_RENDER_FLAG flag);</para>
 		/// </summary>
 		/// <param name="flags">非表示の強制を解除する表示項目。</param>
 		public void UnforceHide(MQObjectRenderFlag flags) =>
@@ -638,40 +644,40 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 現在のオブジェクトの複製を作成します。
-		/// MQObject MQObject::Clone();
+		/// <para>現在のオブジェクトの複製を作成します。</para>
+		/// <para>MQObject MQObject::Clone();</para>
 		/// </summary>
 		/// <returns>複製されたオブジェクト。</returns>
 		public Object Clone() =>
 			FromHandle(Document, NativeMethods.MQObj_Clone(Handle));
 
 		/// <summary>
-		/// 指定されたオブジェクトを現在のオブジェクトへ合成します。
-		/// void MQObject::Merge(MQObject source);
+		/// <para>指定されたオブジェクトを現在のオブジェクトへ合成します。</para>
+		/// <para>void MQObject::Merge(MQObject source);</para>
 		/// </summary>
 		/// <param name="source">合成するオブジェクト。</param>
 		public void Merge(Object source) =>
 			NativeMethods.MQObj_Merge(Handle, source.Handle);
 
 		/// <summary>
-		/// 現在のオブジェクトの曲面や鏡面のフリーズを行います。
-		/// void MQObject::Freeze(DWORD flag);
+		/// <para>現在のオブジェクトの曲面や鏡面のフリーズを行います。</para>
+		/// <para>void MQObject::Freeze(DWORD flag);</para>
 		/// </summary>
 		/// <param name="flag">フリーズする属性。</param>
 		public void Freeze(MQObjectFreeze flag) =>
 			NativeMethods.MQObj_Freeze(Handle, (uint)flag);
 
 		/// <summary>
-		/// 現在のオブジェクトに含まれる参照されていない頂点や面を削除します。
-		/// void MQObject::Compat();
+		/// <para>現在のオブジェクトに含まれる参照されていない頂点や面を削除します。</para>
+		/// <para>void MQObject::Compat();</para>
 		/// </summary>
 		public void Compact() =>
 			NativeMethods.MQDoc_Compact(Handle);
 
 		/// <summary>
-		/// 現在のオブジェクトを破棄し解放します.
-		/// void MQObject::DeleteThis();
-		/// void MQStationPlugin::DeleteDrawingObject(MQDocument doc, MQObject obj);
+		/// <para>現在のオブジェクトを破棄し解放します。</para>
+		/// <para>void MQObject::DeleteThis();</para>
+		/// <para>void MQStationPlugin::DeleteDrawingObject(MQDocument doc, MQObject obj);</para>
 		/// </summary>
 		public void Dispose()
 		{

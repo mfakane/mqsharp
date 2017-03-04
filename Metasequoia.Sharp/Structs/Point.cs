@@ -43,24 +43,24 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// ベクトルのサイズの二乗
-		/// float GetNorm(const MQPoint&amp; p)
+		/// <para>ベクトルのサイズの二乗</para>
+		/// <para>float GetNorm(const MQPoint&amp; p)</para>
 		/// </summary>
 		/// <returns>ベクトルのサイズの二乗</returns>
 		public float GetSizeSquared() =>
 			X * X + Y * Y + Z * Z;
 
 		/// <summary>
-		/// ベクトルのサイズ
-		/// float GetSize(const MQPoint&amp; p)
+		/// <para>ベクトルのサイズ</para>
+		/// <para>float GetSize(const MQPoint&amp; p)</para>
 		/// </summary>
 		/// <returns>ベクトルのサイズ</returns>
 		public float GetSize() =>
 			(float)Math.Sqrt(GetSizeSquared());
 
 		/// <summary>
-		/// ベクトルの正規化
-		/// MQPoint Normalize(const MQPoint&amp; p)
+		/// <para>ベクトルの正規化</para>
+		/// <para>MQPoint Normalize(const MQPoint&amp; p)</para>
 		/// </summary>
 		/// <returns>ベクトルの正規化</returns>
 		public Point Normalize()
@@ -73,8 +73,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 3 点からなる面の法線を得る
-		/// MQPoint GetNormal(const MQPoint&amp; p0, const MQPoint&amp; p1, const MQPoint&amp; p2)
+		/// <para>3 点からなる面の法線を得る</para>
+		/// <para>MQPoint GetNormal(const MQPoint&amp; p0, const MQPoint&amp; p1, const MQPoint&amp; p2)</para>
 		/// </summary>
 		/// <param name="p0">点 1</param>
 		/// <param name="p1">点 2</param>
@@ -90,8 +90,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 4 点からなる面の法線を得る
-		/// MQPoint GetQuadNormal(const MQPoint&amp; p0, const MQPoint&amp; p1, const MQPoint&amp; p2, const MQPoint&amp; p3)
+		/// <para>4 点からなる面の法線を得る</para>
+		/// <para>MQPoint GetQuadNormal(const MQPoint&amp; p0, const MQPoint&amp; p1, const MQPoint&amp; p2, const MQPoint&amp; p3)</para>
 		/// </summary>
 		/// <param name="p0">点 1</param>
 		/// <param name="p1">点 2</param>
@@ -111,8 +111,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 多角形面の法線を得る
-		/// MQPoint GetPolyNormal(const MQPoint *pts, int num)
+		/// <para>多角形面の法線を得る</para>
+		/// <para>MQPoint GetPolyNormal(const MQPoint *pts, int num)</para>
 		/// </summary>
 		/// <returns>多角形面の法線</returns>
 		public static Point GetNormal(Point[] pts)
@@ -216,8 +216,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 3 点からなる三角形の面積を得る
-		/// float GetTriangleArea(const MQPoint&amp; p1, const MQPoint&amp; p2, const MQPoint&amp; p3)
+		/// <para>3 点からなる三角形の面積を得る</para>
+		/// <para>float GetTriangleArea(const MQPoint&amp; p1, const MQPoint&amp; p2, const MQPoint&amp; p3)</para>
 		/// </summary>
 		/// <returns>3 点からなる三角形の面積</returns>
 		public static float GetTriangleArea(Point p1, Point p2, Point p3)
@@ -230,8 +230,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 2 ベクトルの交差する角度をラジアン単位の 0 から π までの値で得る
-		/// float GetCrossingAngle(const MQPoint&amp; v1, const MQPoint&amp; v2)
+		/// <para>2 ベクトルの交差する角度をラジアン単位の 0 から π までの値で得る</para>
+		/// <para>float GetCrossingAngle(const MQPoint&amp; v1, const MQPoint&amp; v2)</para>
 		/// </summary>
 		/// <returns>ベクトルの交差する角度</returns>
 		public static float GetCrossingAngle(Point v1, Point v2)
@@ -252,8 +252,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 内積の値を得る
-		/// float GetInnerProduct(const MQPoint&amp; pa, const MQPoint&amp; pb)
+		/// <para>内積の値を得る</para>
+		/// <para>float GetInnerProduct(const MQPoint&amp; pa, const MQPoint&amp; pb)</para>
 		/// </summary>
 		/// <param name="pa">ベクトル 1</param>
 		/// <param name="pb">ベクトル 2</param>

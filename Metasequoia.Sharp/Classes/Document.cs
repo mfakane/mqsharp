@@ -22,8 +22,8 @@ namespace Metasequoia
 		public DocumentMaterialCollection Materials { get; }
 
 		/// <summary>
-		/// アクティブなオブジェクトを取得または設定します。
-		/// int MQDocument::GetCurrentObjectIndex();
+		/// <para>アクティブなオブジェクトを取得または設定します。</para>
+		/// <para>int MQDocument::GetCurrentObjectIndex();</para>
 		/// </summary>
 		public Object CurrentObject
 		{
@@ -32,8 +32,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// アクティブな材質を取得または設定します。
-		/// int MQDocument::GetCurrentObjectIndex();
+		/// <para>アクティブな材質を取得または設定します。</para>
+		/// <para>int MQDocument::GetCurrentObjectIndex();</para>
 		/// </summary>
 		public Material CurrentMaterial
 		{
@@ -60,8 +60,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// パースペクティブビューを取得します。
-		/// MQScene MQDocument::GetScene(int index);
+		/// <para>パースペクティブビューを取得します。</para>
+		/// <para>MQScene MQDocument::GetScene(int index);</para>
 		/// </summary>
 		public Scene PerspectiveView => Scene.FromHandle(NativeMethods.MQDoc_GetScene(Handle, 0));
 
@@ -75,23 +75,23 @@ namespace Metasequoia
 		public static Document FromHandle(IntPtr ptr) => ptr == IntPtr.Zero ? null : new Document(ptr);
 
 		/// <summary>
-		/// ドキュメント中のオブジェクトやマテリアル配列を切り詰めます。
-		/// void MQDocument::Compact();
+		/// <para>ドキュメント中のオブジェクトやマテリアル配列を切り詰めます。</para>
+		/// <para>void MQDocument::Compact();</para>
 		/// </summary>
 		public void Compact() =>
 			NativeMethods.MQDoc_Compact(Handle);
 
 		/// <summary>
-		/// ドキュメント中で使用されていない新しいオブジェクト名を取得します。
-		/// void MQDocument::GetUnusedObjectName(char *buffer, int buffer_size);
+		/// <para>ドキュメント中で使用されていない新しいオブジェクト名を取得します。</para>
+		/// <para>void MQDocument::GetUnusedObjectName(char *buffer, int buffer_size);</para>
 		/// </summary>
 		/// <returns>新しい名前。</returns>
 		public string GetUnusedObjectName() =>
 			GetUnusedObjectName(null);
 
 		/// <summary>
-		/// ベースとなる名前を指定し、ドキュメント中で使用されていない新しいオブジェクト名を取得します。
-		/// void MQDocument::GetUnusedObjectName(char *buffer, int buffer_size, const char *base_name);
+		/// <para>ベースとなる名前を指定し、ドキュメント中で使用されていない新しいオブジェクト名を取得します。</para>
+		/// <para>void MQDocument::GetUnusedObjectName(char *buffer, int buffer_size, const char *base_name);</para>
 		/// </summary>
 		/// <param name="baseName">新しい名前のベースとなる名前、または null。</param>
 		/// <returns>新しい名前。</returns>
@@ -105,16 +105,16 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// ドキュメント中で使用されていない新しい材質名を取得します。
-		/// void MQDocument::GetUnusedMaterialName(char *buffer, int buffer_size);
+		/// <para>ドキュメント中で使用されていない新しい材質名を取得します。</para>
+		/// <para>void MQDocument::GetUnusedMaterialName(char *buffer, int buffer_size);</para>
 		/// </summary>
 		/// <returns>新しい名前。</returns>
 		public string GetUnusedMaterialName() =>
 			GetUnusedMaterialName(null);
 
 		/// <summary>
-		/// ベースとなる名前を指定し、ドキュメント中で使用されていない新しい材質名を取得します。
-		/// void MQDocument::GetUnusedObjectName(char *buffer, int buffer_size, const char *base_name);
+		/// <para>ベースとなる名前を指定し、ドキュメント中で使用されていない新しい材質名を取得します。</para>
+		/// <para>void MQDocument::GetUnusedObjectName(char *buffer, int buffer_size, const char *base_name);</para>
 		/// </summary>
 		/// <param name="baseName">新しい名前のベースとなる名前、または null。</param>
 		/// <returns>新しい名前。</returns>

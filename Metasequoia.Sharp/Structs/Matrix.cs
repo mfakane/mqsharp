@@ -179,8 +179,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// 行列のうち左上 3x3 成分のみでベクトルと行列の積を計算します。
-		/// const MQPoint MQMatrix::Mult3(const MQPoint&amp; p);
+		/// <para>行列のうち左上 3x3 成分のみでベクトルと行列の積を計算します。</para>
+		/// <para>const MQPoint MQMatrix::Mult3(const MQPoint&amp; p);</para>
 		/// </summary>
 		/// <param name="p">ベクトル</param>
 		/// <returns>ベクトルと行列の積</returns>
@@ -193,8 +193,8 @@ namespace Metasequoia
 			);
 
 		/// <summary>
-		/// 行列のうち左上 3x3 成分のみを転置します。
-		/// void MQMatrix::Transpose3(void);
+		/// <para>行列のうち左上 3x3 成分のみを転置します。</para>
+		/// <para>void MQMatrix::Transpose3(void);</para>
 		/// </summary>
 		/// <returns>転置行列</returns>
 		public Matrix Transpose3() =>
@@ -207,8 +207,8 @@ namespace Metasequoia
 			);
 
 		/// <summary>
-		/// SRT 変換行列から拡大成分を抽出して、その XYZ ごとの要素を MQPoint 型として取得します。
-		/// MQPoint MQMatrix::GetScaling(void) const;
+		/// <para>SRT 変換行列から拡大成分を抽出して、その XYZ ごとの要素を MQPoint 型として取得します。</para>
+		/// <para>MQPoint MQMatrix::GetScaling(void) const;</para>
 		/// </summary>
 		/// <returns>拡大成分</returns>
 		public Point GetScaling()
@@ -221,8 +221,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// SRT 変換行列から回転成分を抽出して、その角度（オイラー角）を MQAngle 型として取得します。
-		/// MQAngle MQMatrix::GetRotation(void) const;
+		/// <para>SRT 変換行列から回転成分を抽出して、その角度（オイラー角）を MQAngle 型として取得します。</para>
+		/// <para>MQAngle MQMatrix::GetRotation(void) const;</para>
 		/// </summary>
 		/// <returns>回転成分</returns>
 		public Angle GetRotation()
@@ -235,8 +235,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// SRT 変換行列から平行移動成分を抽出して、その移動量を MQPoint 型として取得します。
-		/// MQPoint MQMatrix::GetTranslation(void) const;
+		/// <para>SRT 変換行列から平行移動成分を抽出して、その移動量を MQPoint 型として取得します。</para>
+		/// <para>MQPoint MQMatrix::GetTranslation(void) const;</para>
 		/// </summary>
 		/// <returns>平行移動成分</returns>
 		public Point GetTranslation()
@@ -249,8 +249,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// SRT 変換行列を設定します。
-		/// void MQMatrix::SetTransform(const MQPoint *scaling, const MQAngle *rotation, const MQPoint *trans);
+		/// <para>SRT 変換行列を設定します。</para>
+		/// <para>void MQMatrix::SetTransform(const MQPoint *scaling, const MQAngle *rotation, const MQPoint *trans);</para>
 		/// </summary>
 		/// <param name="scaling">拡大成分</param>
 		/// <param name="rotation">回転成分</param>
@@ -272,8 +272,8 @@ namespace Metasequoia
 		}
 
 		/// <summary>
-		/// SRT 変換逆行列を設定します。
-		/// void MQMatrix::SetInverseTransform(const MQPoint *scaling, const MQAngle *rotation, const MQPoint *trans);
+		/// <para>SRT 変換逆行列を設定します。</para>
+		/// <para>void MQMatrix::SetInverseTransform(const MQPoint *scaling, const MQAngle *rotation, const MQPoint *trans);</para>
 		/// </summary>
 		/// <param name="scaling">拡大成分</param>
 		/// <param name="rotation">回転成分</param>
