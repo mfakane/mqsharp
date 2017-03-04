@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>8ca32c71-000a-430e-8b48-763551e8ed34</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Metasequoia</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\DrawingText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\GlobalLight.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\SceneGlobalLightCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\XmlDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\XmlElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\MQHorizontalAlignment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\MQVerticalAlignment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\MQEditOption.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\MQMouseButtons.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MarshalEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\CommandPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\CreatePlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\DrawingObjectVisibility.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ExportPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ImportPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\KeyState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\MouseState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\NewDocumentParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ObjectPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\SaveDocumentParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\SelectPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\DrawingTextParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\SceneOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UTF8String.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UnicodeString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AnsiString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Document.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\DocumentMaterialCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\DocumentObjectCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Face.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Material.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Object.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\ObjectFaceCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\ObjectVertexCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\ReadWriteIndexer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\ReadOnlyIndexer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Scene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Vertex.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DllExportAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\MQCursorType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\MQObjectLightAttenuation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\MQObjectRenderFlag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\MQSettingValue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\MQSystemColor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NamedPtrDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Metaseq.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PinnedObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PinnedStructure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntryPoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enums\Enums.Generated.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\FileFilter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ICreatePlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IExportPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IImportExportPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IImportPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IMenuPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IObjectPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NativeMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NativeMethods.Generated.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IPluginCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ISelectPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IStationPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\IStationPluginCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\Plugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\PluginAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\StationPlugin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\Angle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\ColorRGBA.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\Color.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\Coordinate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\FileDialogInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\Matrix.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\SelectFace.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\SelectLine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\SelectVertex.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\SendMessageInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\UserDataInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Structs\Point.cs" />
+  </ItemGroup>
+</Project>

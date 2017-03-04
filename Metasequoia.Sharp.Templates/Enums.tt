@@ -1,0 +1,144 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ output extension=".Generated.empty" #>
+<#
+var mqsdk = Path.Combine(Path.GetDirectoryName(Host.TemplateFile), "..", "mqsdk");
+
+if (Directory.Exists(mqsdk))
+{
+	var output = Path.Combine(Path.GetDirectoryName(Host.TemplateFile), "..", "Metasequoia.Sharp", "Enums", Path.GetFileNameWithoutExtension(Host.TemplateFile) + ".Generated.cs");
+	var lines = File.ReadAllLines(Path.Combine(mqsdk, "MQPlugin.h"), Encoding.GetEncoding(932));
+	var enums = ParseDefinitions(lines);
+#>
+using System;
+
+namespace Metasequoia
+{
+<#	foreach (var type in enums)
+	{
+		if (type[0].IsFlags) { #>
+	[Flags]
+<#		} #>
+	public enum MQ<#=ConvertCase(type[0].TypeName) #>
+	{
+<#		foreach (var value in type) { #>
+		/// <summary>
+		/// <#=value.OriginalName #>
+		/// </summary>
+		<#=ConvertCase(value.Name) #> = <#=value.Value #>,
+<#		} #>
+	}
+
+<#	} #>
+}
+<#
+	File.WriteAllText(output, GenerationEnvironment.ToString());
+	GenerationEnvironment.Clear();
+}
+#>
+<#+
+IEnumerable<EnumDefinition[]> ParseDefinitions(string[] lines)
+{
+	var defineRegex = new Regex(@"#define\s+(?<name>.+?)\s+(?<value>[0-9x]+)", RegexOptions.Compiled);
+
+	for (var i = 0; i < lines.Length; i++)
+	{
+		if (!lines[i].StartsWith("#define MQ"))
+			continue;
+
+		var values = new HashSet<EnumDefinition>();
+
+		for (; !string.IsNullOrEmpty(lines[i]) && i < lines.Length; i++)
+		{
+			var match = defineRegex.Match(lines[i]);
+
+			if (!match.Success)
+				continue;
+
+			values.Add(new EnumDefinition(match.Groups["name"].Value, match.Groups["value"].Value));
+		}
+
+		if (!values.Any())
+			continue;
+
+		var typeName = string.Join(null, values.First().Name.TakeWhile((c, idx) => values.All(v => v.Name[idx] == c)));
+		
+		foreach (var v in values)
+		{
+			switch (v.Name)
+			{
+				case "MQOBJECT_LATHE_X":
+				case "MQOBJECT_LATHE_Y":
+				case "MQOBJECT_LATHE_Z":
+					v.TypeName = "OBJECT_LATHE_AXIS";
+					v.Name = v.Name.Substring(typeName.Length).TrimStart('_');
+					
+					break;
+				case "MQMATERIAL_VERTEXCOLOR_DISABLE":
+				case "MQMATERIAL_VERTEXCOLOR_DIFFUSE":
+					v.TypeName = "MATERIAL_VERTEX_COLOR";
+					v.Name = v.Name.Split('_').Last();
+
+					break;
+				default:
+					v.TypeName = typeName.Substring(2).TrimEnd('_');
+					v.Name = v.Name.Substring(typeName.Length).TrimStart('_');
+					
+					break;
+			}
+
+		}
+
+		yield return values.ToArray();
+	}
+}
+
+string ConvertCase(string name) =>
+	string.Join(null, name.Select((i, idx) =>
+		i == '_' ? '\0' :
+		idx == 0 || name[idx - 1] == '_' ? char.ToUpper(i) : char.ToLower(i))
+		.Where(i => i != '\0'));
+
+class EnumDefinition
+{
+	public string TypeName { get; set; }
+	public string Name { get; set; }
+	public string Value { get; }
+	public string OriginalName { get; set; }
+	
+	public bool IsFlags
+	{
+		get
+		{
+			switch (TypeName)
+			{
+				case "DOC_CLEARSELECT":
+				case "OBJECT_FREEZE":
+				case "OBJECT_MIRROR_AXIS":
+					return true;
+				default:
+					return false;
+			}
+		}
+	}
+
+	public EnumDefinition(string name, string value)
+	{
+		OriginalName = Name = name;
+		Value = value;
+	}
+
+	public override bool Equals(object obj) =>
+		obj is EnumDefinition enumDef &&
+		enumDef.Name == Name &&
+		enumDef.Value == Value;
+
+	public override int GetHashCode() =>
+		Name.GetHashCode() ^ Value.GetHashCode();
+}
+#>
