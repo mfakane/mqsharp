@@ -21,13 +21,6 @@ $ git clone --recursive https://github.com/mfakane/Metasequoia.Sharp.git
 
 1. 作成するプラグインの C# プロジェクトを作成し、ソリューションフォルダに Metasequoia.Sharp を clone
 2. Metasequoia.Sharp 共有プロジェクトをソリューションに追加し、プロジェクトから参照
-3. プロジェクトファイルを編集し、`</Project>` 直前に以下の行を追加
-```
-<UsingTask AssemblyFile="$(SolutionDir)\Metasequoia.Sharp\Tools\DllExport.Tasks.dll" TaskName="DllExport.Tasks.DllExport" />
-<Target Name="DllExport" AfterTargets="AfterBuild">
-	<DllExport InputPath="$(TargetPath)" Configuration="$(Configuration)" />
-</Target>
-```
 
 ## ライセンス
 

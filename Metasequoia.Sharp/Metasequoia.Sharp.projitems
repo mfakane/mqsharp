@@ -89,4 +89,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Structs\UserDataInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Structs\Point.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Tools\.gitignore" />
+    <None Include="$(MSBuildThisFileDirectory)Tools\DllExport.Tasks.dll" />
+  </ItemGroup>
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)Tools\DllExport.Tasks.dll" TaskName="DllExport.Tasks.DllExport" />
+  <Target Name="DllExport" AfterTargets="AfterBuild">
+    <DllExport InputPath="$(TargetPath)" Configuration="$(Configuration)" />
+  </Target>
 </Project>

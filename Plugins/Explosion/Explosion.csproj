@@ -92,8 +92,4 @@
   </ItemGroup>
   <Import Project="..\..\Metasequoia.Sharp\Metasequoia.Sharp.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <UsingTask AssemblyFile="$(SolutionDir)\Tools\DllExport.Tasks.dll" TaskName="DllExport.Tasks.DllExport" />
-  <Target Name="DllExport" AfterTargets="AfterBuild">
-    <DllExport InputPath="$(TargetPath)" Configuration="$(Configuration)" />
-  </Target>
 </Project>
