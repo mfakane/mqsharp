@@ -9,7 +9,7 @@ C# を使用して Metasequoia 用プラグインを作成可能なフレームワークです。
 ## clone
 
 ```
-$ git clone --recursive https://github.com/mfakane/Metasequoia.Sharp.git
+$ git clone https://github.com/mfakane/Metasequoia.Sharp.git
 ```
 
 ## 動作環境
