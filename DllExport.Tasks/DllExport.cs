@@ -22,6 +22,7 @@ namespace DllExport.Tasks
 		public string OutputPath { get; set; }
 		public string AttributeName { get; set; } = "System.Runtime.InteropServices.DllExportAttribute";
 		public string Configuration { get; set; }
+        public string Platform { get; set; }
 
 		public bool Execute()
 		{
@@ -33,6 +34,7 @@ namespace DllExport.Tasks
 			{
 				Target = AssemblerTarget.Library,
 				Debug = Configuration == "Debug",
+                Platform = (AssemblerPlatform)Enum.Parse(typeof(AssemblerPlatform), Platform, true),
 			};
 			var tempPath = Path.GetTempFileName();
 

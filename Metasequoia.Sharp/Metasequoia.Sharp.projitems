@@ -95,6 +95,6 @@
   </ItemGroup>
   <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)Tools\DllExport.Tasks.dll" TaskName="DllExport.Tasks.DllExport" />
   <Target Name="DllExport" AfterTargets="AfterBuild">
-    <DllExport InputPath="$(TargetPath)" Configuration="$(Configuration)" />
+    <DllExport InputPath="$(TargetPath)" Configuration="$(Configuration)" Platform="$(PlatformName)" />
   </Target>
 </Project>
