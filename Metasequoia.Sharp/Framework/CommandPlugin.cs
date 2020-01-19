@@ -3,7 +3,9 @@
 namespace Metasequoia
 {
 	public abstract class CommandPlugin : StationPlugin
-	{
+    {
+        public MQPluginType PluginType => MQPluginType.Command;
+
 		protected virtual bool OnMouseLeftButtonDown(Document doc, Scene scene, MouseState state) => false;
 		protected virtual bool OnMouseLeftButtonMove(Document doc, Scene scene, MouseState state) => false;
 		protected virtual bool OnMouseLeftButtonUp(Document doc, Scene scene, MouseState state) => false;

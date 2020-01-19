@@ -37,11 +37,12 @@ namespace Metasequoia
 		{
 			switch (PluginInstance)
 			{
-				case IImportPlugin plugin: return MQPluginType.Import;
-				case IExportPlugin plugin: return MQPluginType.Export;
-				case ICreatePlugin plugin: return MQPluginType.Create;
-				case IObjectPlugin plugin: return MQPluginType.Object;
-				case ISelectPlugin plugin: return MQPluginType.Select;
+				case IImportPlugin _: return MQPluginType.Import;
+				case IExportPlugin _: return MQPluginType.Export;
+				case ICreatePlugin _: return MQPluginType.Create;
+				case IObjectPlugin _: return MQPluginType.Object;
+				case ISelectPlugin _: return MQPluginType.Select;
+				case IStationPlugin plugin: return plugin.PluginType;
 				default: throw new InvalidOperationException();
 			}
 		}

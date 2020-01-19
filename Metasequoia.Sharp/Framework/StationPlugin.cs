@@ -9,6 +9,7 @@ namespace Metasequoia
 		readonly Dictionary<int, IntPtr> commandIdentifiers = new Dictionary<int, IntPtr>();
 		readonly Dictionary<int, IntPtr> commandCaptions = new Dictionary<int, IntPtr>();
 
+        public MQPluginType PluginType => MQPluginType.Station;
 		public virtual bool IsActive { get; set; }
 		public abstract string Caption { get; }
 		public IStationPluginCommand[] Commands { get; }
@@ -47,7 +48,7 @@ namespace Metasequoia
 
 		public virtual bool OnEvent(Document doc, MQEvent eventType, IntPtr option)
 		{
-			using (var args = new NamedPtrDictionary(option))
+			using (var args = option != IntPtr.Zero ? new NamedPtrDictionary(option) : null)
 				switch (eventType)
 				{
 					case MQEvent.Initialize:
@@ -138,7 +139,10 @@ namespace Metasequoia
 
 						return true;
 					case MQEvent.NewDocument:
-						OnNewDocument(doc, Marshal.PtrToStringAnsi(args["filename"]), new NewDocumentParameters(XmlElement.FromHandle(args["xml_elem"])));
+                        if (args != null)
+						    OnNewDocument(doc, Marshal.PtrToStringAnsi(args["filename"]), new NewDocumentParameters(XmlElement.FromHandle(args["xml_elem"])));
+						else
+                            OnNewDocument(doc, null, new NewDocumentParameters(null));
 
 						return true;
 					case MQEvent.EndDocument:
